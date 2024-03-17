@@ -1,0 +1,6 @@
+@ShopperStopInReactInReactInReact.Server_HostAddress = http://localhost:5223
+
+GET {{ShopperStopInReactInReactInReact.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

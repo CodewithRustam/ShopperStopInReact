@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopperStopInReact.Server", "ShopperStopInReact.Server\ShopperStopInReact.Server.csproj", "{5BFDC1AE-9BA7-46B2-B3EA-6F77B337CBD6}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "shopperstopinreact.client", "shopperstopinreact.client\shopperstopinreact.client.esproj", "{F36A476C-D054-49A3-8DB2-CEA112105B29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopperStopInReact_Shared", "ShopperStopInReact_Shared\ShopperStopInReact_Shared.csproj", "{73F20BCD-492D-47AB-9E10-55A703B3A50B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5BFDC1AE-9BA7-46B2-B3EA-6F77B337CBD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BFDC1AE-9BA7-46B2-B3EA-6F77B337CBD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BFDC1AE-9BA7-46B2-B3EA-6F77B337CBD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BFDC1AE-9BA7-46B2-B3EA-6F77B337CBD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F36A476C-D054-49A3-8DB2-CEA112105B29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F36A476C-D054-49A3-8DB2-CEA112105B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F36A476C-D054-49A3-8DB2-CEA112105B29}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F36A476C-D054-49A3-8DB2-CEA112105B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F36A476C-D054-49A3-8DB2-CEA112105B29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F36A476C-D054-49A3-8DB2-CEA112105B29}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{73F20BCD-492D-47AB-9E10-55A703B3A50B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73F20BCD-492D-47AB-9E10-55A703B3A50B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73F20BCD-492D-47AB-9E10-55A703B3A50B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73F20BCD-492D-47AB-9E10-55A703B3A50B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {384DFC4B-B7A2-4708-B5E3-73C56C21B564}
+	EndGlobalSection
+EndGlobal
