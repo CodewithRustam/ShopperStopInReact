@@ -75,90 +75,90 @@ namespace ShopperStopInReact.Server.Controllers.Customer
             }
             return BadRequest("No Added Cart Items Found");
         }
-        [HttpGet]
-        public IActionResult GetCartCount()
-        {
-            int? count = 0;
-            try
-            {
-                count = _IAddtoCartRepository.GetCartCount();
-                return Ok(count);
-            }
-            catch (Exception)
-            {
+        //[HttpGet]
+        //public IActionResult GetCartCount()
+        //{
+        //    int? count = 0;
+        //    try
+        //    {
+        //        count = _IAddtoCartRepository.GetCartCount();
+        //        return Ok(count);
+        //    }
+        //    catch (Exception)
+        //    {
 
-                throw;
-            }
-        }
+        //        throw;
+        //    }
+        //}
 
-        [HttpGet]
-        public IActionResult IncreamentCartCount(int ProductId)
-        {
-            try
-            {
-                CartItems addToCartItems = new CartItems();
-                ProductDetails products = _IProductRepository.GetProductsById(ProductId);
-                if (products != null)
-                {
-                    CartItems cartItem = _IAddtoCartRepository.GetCartItemsById(ProductId);
-                    if (cartItem != null && cartItem.AddToCartItemsID > 0)
-                    {
-                        cartItem.Count = cartItem.Count + 1;
-                        cartItem.Price = cartItem.Price + products.Price;
-                        _IAddtoCartRepository.UpdateCartItems(cartItem);
-                        return Ok(_IAddtoCartRepository.GetItemCountOfProduct(ProductId));
-                    }
+        //[HttpGet]
+        //public IActionResult IncreamentCartCount(int ProductId)
+        //{
+        //    try
+        //    {
+        //        CartItems addToCartItems = new CartItems();
+        //        ProductDetails products = _IProductRepository.GetProductsById(ProductId);
+        //        if (products != null)
+        //        {
+        //            CartItems cartItem = _IAddtoCartRepository.GetCartItemsById(ProductId);
+        //            if (cartItem != null && cartItem.AddToCartItemsID > 0)
+        //            {
+        //                cartItem.Count = cartItem.Count + 1;
+        //                cartItem.Price = cartItem.Price + products.Price;
+        //                _IAddtoCartRepository.UpdateCartItems(cartItem);
+        //                return Ok(_IAddtoCartRepository.GetItemCountOfProduct(ProductId));
+        //            }
 
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            return BadRequest();
-        }
-        [HttpGet]
-        public IActionResult DecreamentCartCount(int ProductId)
-        {
-            try
-            {
-                CartItems addToCartItems = new CartItems();
-                ProductDetails products = _IProductRepository.GetProductsById(ProductId);
-                if (products != null)
-                {
-                    CartItems cartItem = _IAddtoCartRepository.GetCartItemsById(ProductId);
-                    if (cartItem != null && cartItem.AddToCartItemsID > 0)
-                    {
-                        cartItem.Count = cartItem.Count - 1;
-                        cartItem.Price -= products.Price;
-                        _IAddtoCartRepository.UpdateCartItems(cartItem);
-                        return Ok(_IAddtoCartRepository.GetItemCountOfProduct(ProductId));
-                    }
-                }
-            }
-            catch (Exception)
-            {
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //    return BadRequest();
+        //}
+        //[HttpGet]
+        //public IActionResult DecreamentCartCount(int ProductId)
+        //{
+        //    try
+        //    {
+        //        CartItems addToCartItems = new CartItems();
+        //        ProductDetails products = _IProductRepository.GetProductsById(ProductId);
+        //        if (products != null)
+        //        {
+        //            CartItems cartItem = _IAddtoCartRepository.GetCartItemsById(ProductId);
+        //            if (cartItem != null && cartItem.AddToCartItemsID > 0)
+        //            {
+        //                cartItem.Count = cartItem.Count - 1;
+        //                cartItem.Price -= products.Price;
+        //                _IAddtoCartRepository.UpdateCartItems(cartItem);
+        //                return Ok(_IAddtoCartRepository.GetItemCountOfProduct(ProductId));
+        //            }
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
 
-                throw;
-            }
-            return BadRequest();
-        }
-        [HttpGet]
-        public IActionResult RemoveFromCart(int ProductId)
-        {
-            try
-            {
-                bool flag = _IAddtoCartRepository.RemoveItemFromCart(ProductId);
-                if (flag)
-                    return Ok();
-            }
-            catch (Exception)
-            {
+        //        throw;
+        //    }
+        //    return BadRequest();
+        //}
+        //[HttpGet]
+        //public IActionResult RemoveFromCart(int ProductId)
+        //{
+        //    try
+        //    {
+        //        bool flag = _IAddtoCartRepository.RemoveItemFromCart(ProductId);
+        //        if (flag)
+        //            return Ok();
+        //    }
+        //    catch (Exception)
+        //    {
 
-                throw;
-            }
-            return BadRequest();
-        }
+        //        throw;
+        //    }
+        //    return BadRequest();
+        //}
         [HttpGet]
         public IActionResult AddWishListItem(int ProductId, int UserId)
         {
