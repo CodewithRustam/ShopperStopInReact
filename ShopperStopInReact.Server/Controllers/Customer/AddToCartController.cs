@@ -192,22 +192,22 @@ namespace ShopperStopInReact.Server.Controllers.Customer
             }
             return BadRequest();
         }
-        [HttpGet]
-        public IActionResult GetWishListItems()
-        {
-            try
-            {
-                List<WishListItemsViewModel> wishListItemsViewModel = _IAddtoCartRepository.GetWishListItems();
-                if (wishListItemsViewModel.Count > 0)
-                    return Ok(wishListItemsViewModel);
-            }
-            catch (Exception)
-            {
+        //[HttpGet]
+        //public IActionResult GetWishListItems()
+        //{
+        //    try
+        //    {
+        //        List<WishListItemsViewModel> wishListItemsViewModel = _IAddtoCartRepository.GetWishListItems();
+        //        if (wishListItemsViewModel.Count > 0)
+        //            return Ok(wishListItemsViewModel);
+        //    }
+        //    catch (Exception)
+        //    {
 
-                throw;
-            }
-            return BadRequest();
-        }
+        //        throw;
+        //    }
+        //    return BadRequest();
+        //}
         [HttpGet]
         public IActionResult RemoveWishListItem(int ProductId)
         {
