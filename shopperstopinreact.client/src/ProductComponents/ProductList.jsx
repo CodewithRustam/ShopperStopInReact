@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 
 
 const ProductList = ({ products }) => {
-    const {isLoggedIn } = useAuth();
+    const {isLoggedIn,isLoggedOut } = useAuth();
 
     let calculateDiscount = (price, maxPrice) => {
         let discount = (maxPrice - price) / maxPrice;
@@ -20,6 +20,14 @@ const ProductList = ({ products }) => {
             });
         }
     }, [isLoggedIn]);
+
+    useEffect(() => {
+        if (isLoggedOut) {
+            toast.warning('Logout Succefully !!', {
+                autoClose: 2000
+            });
+        }
+    }, [isLoggedOut]);
 
     return (
         <>

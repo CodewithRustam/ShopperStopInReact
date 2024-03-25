@@ -10,6 +10,7 @@ export const AuthProvider = ({ children }) => {
         return !!storedValue; // Convert storedValue to boolean
     });
 
+    const [isLoggedOut, setIsLoggedOut] = useState(false);
     const login = async (EmailOrMobile, Password) => {
         try {
             console.log(isLoggedIn);
@@ -39,11 +40,11 @@ export const AuthProvider = ({ children }) => {
     const logout = () => {
         setIsLoggedIn(false);
         localStorage.removeItem('userLoginDetails');
-        return true;
+        setIsLoggedOut(true);
     };
 
     return (
-        <AuthContext.Provider value={{ isLoggedIn, login, logout }}>
+        <AuthContext.Provider value={{ isLoggedIn, login, logout, isLoggedOut }}>
             {children}
         </AuthContext.Provider>
     );
