@@ -5,6 +5,8 @@ import ProductDetail from './ProductComponents/ProductDetail';
 import CartItems from './ProductComponents/CartItems';
 import LoginPage from './ProtectedLoginComponent/LoginPage';
 import ProtectedRoute from './ProtectedLoginComponent/ProtectedRoute';
+import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
     const [products, setProducts] = useState([]);
 

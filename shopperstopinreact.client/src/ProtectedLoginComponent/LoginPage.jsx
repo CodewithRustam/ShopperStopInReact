@@ -1,6 +1,7 @@
 import { useState} from 'react';
 import { useAuth } from './AuthContext';
 import { Navigate } from 'react-router-dom'; // Import Redirect from react-router-dom
+import { ToastContainer, toast } from 'react-toastify';
 
 
 const LoginPage = () => {
@@ -11,10 +12,24 @@ const LoginPage = () => {
         e.preventDefault();
         const { username, password } = formData;
         if (username.trim() && password.trim()) {
-            login(username, password); // Call the login function with username and password
+            login(username, password)
+                .then((loggedIn) => {
+                    if (!loggedIn) {
+                        console.log('Login failed');
+                        toast.error('Username and password are Invalid.', {
+                            autoClose: 2000
+                        });
+                    } 
+                })
+                .catch((error) => {
+                    console.error('Error during login:', error);
+                });
         } else {
-            // Handle empty username or password (e.g., display error message)
             console.error('Username and password are required.');
+
+            toast.error('Username and password are required.', {
+                autoClose: 2000 // Set autoClose to 3000 milliseconds (3 seconds)
+            });
         }
     };
 
@@ -26,7 +41,9 @@ const LoginPage = () => {
         return <Navigate to="/" />;
     }
     return (
-            <div className="container d-flex justify-content-center p-5">
+        <div className="container d-flex justify-content-center p-5">
+            <ToastContainer position="top-right" />
+
                 <div className="card bg-dark text-light" style={{ width: '30%' }}>
                     <div className="card-body p-4">
                         <form onSubmit={handleSubmit}>

@@ -5,8 +5,6 @@ const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
-
-    // Initialize isLoggedIn based on whether user is logged in or not from localStorage
     const [isLoggedIn, setIsLoggedIn] = useState(() => {
         const storedValue = localStorage.getItem('userLoginDetails');
         return !!storedValue; // Convert storedValue to boolean
@@ -28,8 +26,9 @@ export const AuthProvider = ({ children }) => {
                 const responseData = await response.json();
                 localStorage.setItem('userLoginDetails', JSON.stringify(responseData));
                 setIsLoggedIn(true);
+                return true;
             } else {
-                throw new Error('Login failed');
+                return false;
             }
         } catch (error) {
             console.error('Login error:', error.message);
@@ -39,7 +38,8 @@ export const AuthProvider = ({ children }) => {
 
     const logout = () => {
         setIsLoggedIn(false);
-        localStorage.removeItem('userLoginDetails'); 
+        localStorage.removeItem('userLoginDetails');
+        return true;
     };
 
     return (
